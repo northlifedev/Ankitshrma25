@@ -22,13 +22,13 @@ jobs:
       - name: Generate Snake SVG
         uses: Platane/snk/svg-only@v3
         with:
-          github_user_name: Ankitshrma25
-          outputs: dist/github-contribution-grid-snake.svg
+          github_user_name: Ankitshrma25  # Your GitHub username
+          outputs: dist/github-contribution-grid-snake.svg  # Output path for the SVG file
 
       - name: Push Snake Animation to output branch
         uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
-          target_branch: output
-          build_dir: dist
+          target_branch: output  # Branch where the animation is pushed
+          build_dir: dist        # Folder containing the generated SVG
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed for authentication and pushing changes
